@@ -1,0 +1,54 @@
+
+
+name: zhuxinfu Update
+
+on:
+  schedule:
+  - cron: '45 21 * * *'
+  workflow_dispatch:
+    分支:
+      - main
+     
+permissions: write-all
+jobs:
+  run_script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.10'
+
+    - name: Cache dependencies
+      uses: actions/cache@v2
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+
+    - name: Install dependencies
+      run: |
+        pip install requests
+
+    - name: Run Python script
+      run: python IPTVmain.py
+
+    - name: Commit and push if changed
+      run: |
+            git config --local user.email "chenqiao2001@gmail.com"
+            git config --local user.name "chxxyz2004"
+            if [ -n "$(git status --porcelain)" ]; then
+            git commit -am "Automatic update"
+            git push -f
+            else
+              echo "No changes detected, skipping commit."
+            fi
+
+    env:
+      TZ: Asia/Shanghai
+ 
