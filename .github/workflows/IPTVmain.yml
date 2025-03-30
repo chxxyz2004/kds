@@ -1,54 +1,76 @@
-
-
-name: zhuxinfu Update
+name: IPTV Data Sync  # 更清晰的业务描述
 
 on:
   schedule:
-  - cron: '45 21 * * *'
+    - cron: '45 21 * * *'  # UTC时间21:45（北京时间次日5:45）
   workflow_dispatch:
-    分支:
-      - main
-     
-permissions: write-all
+    inputs:  # 添加手动触发参数
+      force-push:
+        description: '是否强制推送变更'
+        type: boolean
+        default: false
+    branches: [ main ]  # 修正中文语法错误
+
+permissions:
+  contents: write  # 最小化权限
+
 jobs:
-  run_script:
+  data-processing:  # 更具体的任务命名
     runs-on: ubuntu-latest
+    timeout-minutes: 30  # 超时自动终止
+    env:  # 全局环境变量
+      TZ: Asia/Shanghai
+      LOG_FILE: process.log
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Set up Python
-      uses: actions/setup-python@v2
+    - name: Checkout code
+      uses: actions/checkout@v4  # 升级到最新稳定版
       with:
-        python-version: '3.10'
+        fetch-depth: 0  # 获取完整提交历史
+
+    - name: Setup Python 3.10.12
+      uses: actions/setup-python@v4  # 升级版本
+      with:
+        python-version: '3.10.12'  # 精确版本锁定
 
     - name: Cache dependencies
-      uses: actions/cache@v2
+      uses: actions/cache@v3  # 升级缓存组件
       with:
-        path: ~/.cache/pip
-        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-        restore-keys: |
-          ${{ runner.os }}-pip-
+        path: |
+          ~/.cache/pip
+          __pycache__
+        key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
 
     - name: Install dependencies
       run: |
-        pip install requests
+        pip install -r requirements.txt  # 使用依赖清单文件
+        echo "安装时间: $(date)" >> $LOG_FILE
 
-    - name: Run Python script
-      run: python IPTVmain.py
-
-    - name: Commit and push if changed
+    - name: Execute main script
       run: |
-            git config --local user.email "chenqiao2001@gmail.com"
-            git config --local user.name "chxxyz2004"
-            if [ -n "$(git status --porcelain)" ]; then
-            git commit -am "Automatic update"
-            git push -f
-            else
-              echo "No changes detected, skipping commit."
-            fi
+        { 
+          python IPTVmain.py 2>&1 | tee -a $LOG_FILE
+        } || (echo "脚本执行失败" && exit 1)
 
-    env:
-      TZ: Asia/Shanghai
- 
+    - name: Commit changes
+      id: commit
+      if: success()
+      run: |
+        git config --local user.email "chenqiao2001@gmail.com"
+        git config --local user.name "chxxyz2004"
+        git add *.m3u *.txt  # 明确文件类型
+        if [ -n "$(git status --porcelain)" ]; then
+          git commit -m "数据同步: $(date +'%Y-%m-%d %H:%M')"  # 含时间戳
+          echo "has_changes=true" >> $GITHUB_OUTPUT
+        else
+          echo "没有检测到变更"
+        fi
+
+    - name: Push changes
+      if: steps.commit.outputs.has_changes == 'true'
+      run: |
+        if ${{ inputs.force-push }}; then
+          git push -f origin main
+        else
+          git push origin main  # 移除危险强制推送
+        fi
