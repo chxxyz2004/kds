@@ -1,40 +1,36 @@
-name: IPTV Data Sync  # 更清晰的业务描述
+name: IPTV Data Sync
 
 on:
   schedule:
     - cron: '45 21 * * *'  # UTC时间21:45（北京时间次日5:45）
   workflow_dispatch:
-    inputs:  # 添加手动触发参数
+    inputs:
       force-push:
-        description: '是否强制推送变更'
+        description: '强制推送变更 (慎用)'
         type: boolean
         default: false
-    branches: [ main ]  # 修正中文语法错误
-
-permissions:
-  contents: write  # 最小化权限
 
 jobs:
-  data-processing:  # 更具体的任务命名
+  data-processing:
     runs-on: ubuntu-latest
-    timeout-minutes: 30  # 超时自动终止
-    env:  # 全局环境变量
+    timeout-minutes: 30
+    env:
       TZ: Asia/Shanghai
       LOG_FILE: process.log
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4  # 升级到最新稳定版
+      uses: actions/checkout@v4
       with:
-        fetch-depth: 0  # 获取完整提交历史
+        fetch-depth: 0
 
-    - name: Setup Python 3.10.12
-      uses: actions/setup-python@v4  # 升级版本
+    - name: Setup Python
+      uses: actions/setup-python@v4
       with:
-        python-version: '3.10.12'  # 精确版本锁定
+        python-version: '3.10.12'
 
     - name: Cache dependencies
-      uses: actions/cache@v3  # 升级缓存组件
+      uses: actions/cache@v3
       with:
         path: |
           ~/.cache/pip
@@ -43,12 +39,12 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install -r requirements.txt  # 使用依赖清单文件
-        echo "安装时间: $(date)" >> $LOG_FILE
+        pip install -r requirements.txt
+        echo "[$(date +'%Y-%m-%d %H:%M:%S')] 依赖安装完成" >> $LOG_FILE
 
     - name: Execute main script
       run: |
-        { 
+        {
           python IPTVmain.py 2>&1 | tee -a $LOG_FILE
         } || (echo "脚本执行失败" && exit 1)
 
@@ -58,10 +54,12 @@ jobs:
       run: |
         git config --local user.email "chenqiao2001@gmail.com"
         git config --local user.name "chxxyz2004"
-        git add *.m3u *.txt  # 明确文件类型
+        git add *.m3u *.txt
+        
         if [ -n "$(git status --porcelain)" ]; then
-          git commit -m "数据同步: $(date +'%Y-%m-%d %H:%M')"  # 含时间戳
+          git commit -m "自动更新: $(date +'%Y-%m-%d %H:%M')"
           echo "has_changes=true" >> $GITHUB_OUTPUT
+          echo "[$(date +'%Y-%m-%d %H:%M:%S')] 提交变更" >> $LOG_FILE
         else
           echo "没有检测到变更"
         fi
@@ -69,8 +67,11 @@ jobs:
     - name: Push changes
       if: steps.commit.outputs.has_changes == 'true'
       run: |
-        if ${{ inputs.force-push }}; then
+        if [ "${{ inputs.force-push }}" = "true" ]; then
+          echo "执行强制推送..."
           git push -f origin main
         else
-          git push origin main  # 移除危险强制推送
+          echo "执行常规推送..."
+          git push origin main
         fi
+        echo "[$(date +'%Y-%m-%d %H:%M:%S')] 推送完成" >> $LOG_FILE
