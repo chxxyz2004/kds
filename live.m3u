@@ -5,7 +5,7 @@ https://liuliuliu.tv/api/channels/1997/stream
 https://liuliuliu.tv/api/channels/233/stream
 #EXTINF:-1 tvg-id="1" tvg-name="更新日期" tvg-logo="http://175.178.251.183:6689/LR.jpg" group-title="酒儿公告",更新日期
 https://gitlab.com/lr77/IPTV/-/raw/main/%E4%B8%BB%E8%A7%92.mp4
-#EXTINF:-1 tvg-id="1" tvg-name="2025-04-22" tvg-logo="http://175.178.251.183:6689/LR.jpg" group-title="酒儿公告",2025-04-22
+#EXTINF:-1 tvg-id="1" tvg-name="2025-04-23" tvg-logo="http://175.178.251.183:6689/LR.jpg" group-title="酒儿公告",2025-04-23
 https://gitlab.com/lr77/IPTV/-/raw/main/%E8%B5%B7%E9%A3%8E%E4%BA%86.mp4
 #EXTINF:-1 tvg-id="1" tvg-name="CCTV1" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/CCTV1.png" group-title="央视频道",CCTV1
 http://[2409:8087:2001:20:2800:0:df6e:eb07]:80/wh7f454c46tw1527557465_-1431215922/ott.mobaibox.com/PLTV/3/224/3221227375/index.m3u8?icpid=3&RTS=1674385937&from=40&popid=40&hms_devid=2036&prioritypopid=40&vqe=3$『线路1』
@@ -1003,28 +1003,20 @@ http://[2409:8087:1e03:21::2]:6060/cms001/ch00000090990000001470/index.m3u8$『�
 http://[2409:8087:1a0b:df::4020]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226516/index.m3u8$『线路3』
 #EXTINF:-1 tvg-id="1" tvg-name="第一财经" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/第一财经.png" group-title="上海频道",第一财经
 http://[2409:8087:5e00:24::2d]:6610/000000001000/1/5000000010000027146/index.m3u8?channel-id=bestzb&Contentid=5000000010000027146&livemode=1&stbId=3$『线路1』
-#EXTINF:-1 tvg-id="2" tvg-name="第一财经" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/第一财经.png" group-title="上海频道",第一财经
-http://[2409:8087:5e01:24::16]:6610/000000001000/2000000002000000004/index.m3u8?stbId=3&livemode=1&HlsProfileId=&channel-id=hnbblive&Contentid=2000000002000000004&IAS$『线路2』
 #EXTINF:-1 tvg-id="1" tvg-name="上海纪实" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/上海纪实.png" group-title="上海频道",上海纪实
 http://[2409:8087:3869:8021:1001::e5]:6610/PLTV/88888910/224/3221225655/index.m3u8$『线路1』
 #EXTINF:-1 tvg-id="1" tvg-name="上海都市" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/上海都市.png" group-title="上海频道",上海都市
-http://[2409:8087:5e01:24::16]:6610/000000001000/2000000002000000012/index.m3u8?stbId=3&livemode=1&HlsProfileId=&channel-id=hnbblive&Contentid=2000000002000000012&IAS$『线路1』
+http://[2409:8087:1e03:21::2]:6060/cms001/ch00000090990000001015/index.m3u8$『线路1』
 #EXTINF:-1 tvg-id="2" tvg-name="上海都市" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/上海都市.png" group-title="上海频道",上海都市
-http://[2409:8087:1e03:21::2]:6060/cms001/ch00000090990000001015/index.m3u8$『线路2』
-#EXTINF:-1 tvg-id="3" tvg-name="上海都市" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/上海都市.png" group-title="上海频道",上海都市
-http://[2409:8087:1e03:21::2]:6060/cms001/ch00000090990000001015/index.m3u8?$『线路3』
+http://[2409:8087:1e03:21::2]:6060/cms001/ch00000090990000001015/index.m3u8?$『线路2』
 #EXTINF:-1 tvg-id="1" tvg-name="东方影视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/东方影视.png" group-title="上海频道",东方影视
-http://[2409:8087:5e01:24::16]:6610/000000001000/2000000002000000013/index.m3u8?stbId=3&livemode=1&HlsProfileId=&channel-id=hnbblive&Contentid=2000000002000000013&IAS$『线路1』
+http://[2409:8087:1e03:21::2]:6060/cms001/ch00000090990000001016/index.m3u8$『线路1』
 #EXTINF:-1 tvg-id="2" tvg-name="东方影视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/东方影视.png" group-title="上海频道",东方影视
-http://[2409:8087:1e03:21::2]:6060/cms001/ch00000090990000001016/index.m3u8$『线路2』
+http://[2409:8087:1e03:21::2]:6060/cms001/ch00000090990000001016/index.m3u8?$『线路2』
 #EXTINF:-1 tvg-id="3" tvg-name="东方影视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/东方影视.png" group-title="上海频道",东方影视
-http://[2409:8087:1e03:21::2]:6060/cms001/ch00000090990000001016/index.m3u8?$『线路3』
-#EXTINF:-1 tvg-id="4" tvg-name="东方影视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/东方影视.png" group-title="上海频道",东方影视
-http://[2409:8087:1e04:21::102]:6060/cms001/ch00000090990000001016/1.m3u8$『线路4』
+http://[2409:8087:1e04:21::102]:6060/cms001/ch00000090990000001016/1.m3u8$『线路3』
 #EXTINF:-1 tvg-id="1" tvg-name="东方财经" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/东方财经.png" group-title="上海频道",东方财经
 http://[2409:8087:5e00:24::2d]:6610/000000001000/1/5000000007000010003/index.m3u8?channel-id=bestzb&Contentid=5000000007000010003&livemode=1&stbId=3$『线路1』
-#EXTINF:-1 tvg-id="2" tvg-name="东方财经" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/东方财经.png" group-title="上海频道",东方财经
-http://[2409:8087:5e01:24::16]:6610/000000001000/2000000002000000090/index.m3u8?stbId=3&livemode=1&HlsProfileId=&channel-id=hnbblive&Contentid=2000000002000000090&IAS$『线路2』
 #EXTINF:-1 tvg-id="1" tvg-name="动漫秀场" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/动漫秀场.png" group-title="上海频道",动漫秀场
 http://[2409:8087:74d9:21::6]/000000001000PLTV/88888888/224/3221226197/index.m3u8$『线路1』
 #EXTINF:-1 tvg-id="2" tvg-name="动漫秀场" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/动漫秀场.png" group-title="上海频道",动漫秀场
@@ -1057,8 +1049,6 @@ http://[2409:8087:1e03:21::2]:6060/cms001/ch00000090990000001014/index.m3u8$『�
 http://[2409:8087:1e03:21::2]:6060/cms001/ch00000090990000001014/index.m3u8?$『线路2』
 #EXTINF:-1 tvg-id="3" tvg-name="新闻综合" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/新闻综合.png" group-title="上海频道",新闻综合
 http://[2409:8087:1e04:21::102]:6060/cms001/ch00000090990000001014/1.m3u8$『线路3』
-#EXTINF:-1 tvg-id="1" tvg-name="法治天地" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/法治天地.png" group-title="上海频道",法治天地
-http://[2409:8087:5e01:24::16]:6610/000000001000/2000000002000000014/index.m3u8?stbId=3&livemode=1&HlsProfileId=&channel-id=hnbblive&Contentid=2000000002000000014&IAS$『线路1』
 #EXTINF:-1 tvg-id="1" tvg-name="纪实人文" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/纪实人文.png" group-title="上海频道",纪实人文
 http://[2409:8087:74d9:21::6]/000000001000PLTV/88888888/224/3221226174/index.m3u8$『线路1』
 #EXTINF:-1 tvg-id="2" tvg-name="纪实人文" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/纪实人文.png" group-title="上海频道",纪实人文
