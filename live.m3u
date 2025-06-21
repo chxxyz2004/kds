@@ -5,7 +5,7 @@ https://liuliuliu.tv/api/channels/1997/stream
 https://liuliuliu.tv/api/channels/233/stream
 #EXTINF:-1 tvg-id="1" tvg-name="更新日期" tvg-logo="http://175.178.251.183:6689/LR.jpg" group-title="酒儿公告",更新日期
 https://gitlab.com/lr77/IPTV/-/raw/main/%E4%B8%BB%E8%A7%92.mp4
-#EXTINF:-1 tvg-id="1" tvg-name="2025-06-21" tvg-logo="http://175.178.251.183:6689/LR.jpg" group-title="酒儿公告",2025-06-21
+#EXTINF:-1 tvg-id="1" tvg-name="2025-06-22" tvg-logo="http://175.178.251.183:6689/LR.jpg" group-title="酒儿公告",2025-06-22
 https://gitlab.com/lr77/IPTV/-/raw/main/%E8%B5%B7%E9%A3%8E%E4%BA%86.mp4
 #EXTINF:-1 tvg-id="1" tvg-name="CCTV1" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/CCTV1.png" group-title="央视频道",CCTV1
 http://[2409:8087:5e00:24::1e]:6060/000000001000/1000000006000233001/1.m3u8$『线路1』
@@ -530,15 +530,13 @@ http://[2409:8087:5e00:24::1e]:6060/000000001000/1000000001000001925/1.m3u8$『�
 #EXTINF:-1 tvg-id="6" tvg-name="黑龙江卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/黑龙江卫视.png" group-title="卫视频道",黑龙江卫视
 http://[2409:8087:5e00:24::20]:6610/000000001000/1/1000000005000265029/index.m3u8?channel-id=ystenlive&Contentid=1000000005000265029&livemode=1&stbId=3$『线路6』
 #EXTINF:-1 tvg-id="1" tvg-name="湖北卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/湖北卫视.png" group-title="卫视频道",湖北卫视
-http://[2409:8087:1a01:df::4077]/ottrrs.hl.chinamobile.com/PLTV/88888888/8/3221226501/index.m3u8$『线路1』
+http://[2409:8087:5e00:24::1e]:6060/000000001000/1000000001000024621/1.m3u8$『线路1』
 #EXTINF:-1 tvg-id="2" tvg-name="湖北卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/湖北卫视.png" group-title="卫视频道",湖北卫视
-http://[2409:8087:5e00:24::1e]:6060/000000001000/1000000001000024621/1.m3u8$『线路2』
+http://[2409:8087:5e00:24::1e]:6060/000000001000/5000000004000014954/1.m3u8$『线路2』
 #EXTINF:-1 tvg-id="3" tvg-name="湖北卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/湖北卫视.png" group-title="卫视频道",湖北卫视
-http://[2409:8087:5e00:24::1e]:6060/000000001000/5000000004000014954/1.m3u8$『线路3』
+http://[2409:8087:5e00:24::20]:6610/000000001000/1/1000000005000265023/index.m3u8?channel-id=ystenlive&Contentid=1000000005000265023&livemode=1&stbId=3$『线路3』
 #EXTINF:-1 tvg-id="4" tvg-name="湖北卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/湖北卫视.png" group-title="卫视频道",湖北卫视
-http://[2409:8087:5e00:24::20]:6610/000000001000/1/1000000005000265023/index.m3u8?channel-id=ystenlive&Contentid=1000000005000265023&livemode=1&stbId=3$『线路4』
-#EXTINF:-1 tvg-id="5" tvg-name="湖北卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/湖北卫视.png" group-title="卫视频道",湖北卫视
-http://[2409:8087:1a0a:df::404b]/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221226477/index.m3u8$『线路5』
+http://[2409:8087:1a0a:df::404b]/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221226477/index.m3u8$『线路4』
 #EXTINF:-1 tvg-id="1" tvg-name="江西卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/江西卫视.png" group-title="卫视频道",江西卫视
 http://[2409:8087:1a01:df::4027]:80/TVOD/88888888/224/3221225935/main.m3u8$『线路1』
 #EXTINF:-1 tvg-id="2" tvg-name="江西卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/江西卫视.png" group-title="卫视频道",江西卫视
@@ -787,6 +785,8 @@ http://[2409:8087:1a01:df::7005]/ottrrs.hl.chinamobile.com/PLTV/2/224/3221226516
 http://[2409:8087:1a0a:df::4038]/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221226516/index.m3u8$『线路6』
 #EXTINF:-1 tvg-id="7" tvg-name="延边卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/延边卫视.png" group-title="卫视频道",延边卫视
 http://[2409:8087:5e08:24::17]:6610/000000001000/1000000005000266008/1.m3u8?channel-id=ystenlive&Contentid=1000000005000266008&livemode=1&stbId=3$『线路7』
+#EXTINF:-1 tvg-id="1" tvg-name="宁波TV5" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/宁波TV5.png" group-title="浙江频道",宁波TV5
+http://[2409:8087:3869:8021:1001::e5]:6610/PLTV/88888888/224/3221226240/2/index.m3u8$LR•IPV6
 #EXTINF:-1 tvg-id="1" tvg-name="第一财经" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/第一财经.png" group-title="上海频道",第一财经
 http://[2409:8087:5e00:24::2d]:6610/000000001000/1/5000000010000027146/index.m3u8?channel-id=bestzb&Contentid=5000000010000027146&livemode=1&stbId=3$『线路1』
 #EXTINF:-1 tvg-id="2" tvg-name="第一财经" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/第一财经.png" group-title="上海频道",第一财经
